@@ -2,7 +2,7 @@
 //This is not the best approach, because if the position changes the test will fail. 
 describe("Text box with mas characters", ()=>{
     beforeEach(()=>{
-        cy.visit('http://localhost:3000/example-3');
+        cy.visit('/example-3');
 
         cy.get('[data-cy="last-name-chars-left-count"]')
         .as('charsLeftSpan');
@@ -17,7 +17,7 @@ describe("Text box with mas characters", ()=>{
             .then($charsLeftSpan =>{
                 expect($charsLeftSpan.text()).to.equal('15');
              });
-             
+
         cy.get('@charInput').type('hello');
 
         cy.get('@charsLeftSpan')
@@ -25,9 +25,7 @@ describe("Text box with mas characters", ()=>{
              .then($charsLeftSpan =>{
                  expect($charsLeftSpan.text()).to.equal('10');
              })
-          
-            // .invoke('text')
-            // .should('equal', '10');
+    
 
         cy.get('@charInput').type(' my friend');
 
