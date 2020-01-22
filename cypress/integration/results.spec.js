@@ -17,22 +17,16 @@ describe("Text box with mas characters", ()=>{
         .as('charInput')
 
         cy.get('@charsLeftSpan')
-        //The charsLeftSpan is the DOM element the Cypress return to us.
-            .then($charsLeftSpan =>{
-                expect($charsLeftSpan.text()).to.equal('15');
-             });
             
-        
+            .invoke('text')
+            .should('equal', '15');
+
         cy.get('@charInput').type('hello');
 
         cy.get('@charsLeftSpan')
-
-             .then($charsLeftSpan =>{
-                 expect($charsLeftSpan.text()).to.equal('10');
-             })
           
-            // .invoke('text')
-            // .should('equal', '10');
+            .invoke('text')
+            .should('equal', '10');
 
         cy.get('@charInput').type(' my friend');
 
