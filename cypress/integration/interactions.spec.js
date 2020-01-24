@@ -35,4 +35,13 @@ describe('Basic page interactions', ()=>{
             .should('equal', 'Option Three')
     })
 
+    it('should display the name of the last item hover of', ()=>{
+        cy.get('[data-cy=box-4-items-list] > :nth-child(2)')
+        //mouse event combinations, trigger is going to be the option
+        .trigger('mouseover');
+
+        cy.get('[data-cy=box-4-selected-name')
+        .invoke('text')
+        .should('equal', 'Option Two')
+    })
 })
