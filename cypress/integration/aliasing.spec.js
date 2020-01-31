@@ -1,3 +1,4 @@
+alert(Cypress.env('MY_ENV_VARIABLE'))
 //In this example I'm accessing the index of the HTML element to test it
 //This is not the best approach, because if the position changes the test will fail. 
 describe("Text box with mas characters", ()=>{
