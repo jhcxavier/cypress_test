@@ -1,7 +1,11 @@
+/// <reference types="Cypress" />
+// The above line activate the autocompletion for cypress commands
+
 describe('Basic page interactions', ()=>{
     beforeEach(()=>{
         //using baseUrl
         cy.visit('/example-4');
+    
     })
 
     it('sets the header text to the item\'s name when double clicked', ()=>{
