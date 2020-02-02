@@ -10,7 +10,7 @@ describe("Text box with mas characters", ()=>{
         //assign any unique value to it
 
         //The 2 lines below is how we replace the "cy.get('[data-cy="last-name-chars-left-count"]')"
-        // using .as('') -- Also, you need to use @ when using alias.
+        // using .as('') -- Also, you need to use @ when using alias!
         cy.get('[data-cy="last-name-chars-left-count"]')
         .as('charsLeftSpan');
 
